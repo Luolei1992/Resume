@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>360案例</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/test.css">
+</head>
+<body>
+  <ul id="myMenu">
+    <li data-menuanchor="firstPage" class="menuList"><a href="#firstPage">1</a></li>
+    <li data-menuanchor="secondPage"class="menuList"><a href="#secondPage">2</a></li>
+    <li data-menuanchor="thirdPage" class="menuList"><a href="#thirdPage">3</a></li>
+    <li data-menuanchor="fourthPage"class="menuList"><a href="#fourthPage">4</a></li>
+    <li data-menuanchor="fifthPage"class="menuList"><a href="#fifthPage">5</a></li>
+  </ul>
+  <div id="dowebok">
+    <div class="section first">
+        <div class="wraper">
+          <div class="logo">
+            <!-- <img src="images/logo.png" alt=""> -->
+          </div>
+          <div class="text">
+            <img src="images/text_1.png" alt="">
+            <img src="images/text_2.png" alt="">
+            <img src="images/text_3.png" alt="">
+            <img src="images/text_4.png" alt="">
+            <img src="images/text_5.png" alt="">
+            <img src="images/text_6.png" alt="">
+            <img src="images/text_7.png" alt="">
+            <img src="images/text_8.png" alt="">
+          </div>
+          <div class="des"></div>
+        </div>
+    </div>
+    <div class="section second">
+        <div class="pics">
+          <img src="images/shield_1.png" alt="">
+          <img src="images/shield_2.png" alt="">
+          <img src="images/shield_3.png" alt="">
+          <img src="images/shield_4.png" alt="">
+          <img src="images/shield_5.png" alt="">
+          <img src="images/shield_6.png" alt="">
+          <img src="images/shield_7.png" alt="">
+          <img src="images/shield_8.png" alt="">
+          <img src="images/shield_9.png" alt="">
+        </div>
+        <div class="des"></div>
+    </div>
+    <div class="section third">
+        <div class="fast"></div>
+        <div class="circle"></div>
+        <div class="rocket"></div>
+    </div>
+    <div class="section fourth">
+        <div class="search">
+          <div class="inp"></div>
+          <div class="key"></div>
+          <div class="wrap">
+            <div class="result">
+              
+            </div>
+          </div>
+        </div>
+        <div class="smart">
+          
+        </div>
+    </div>
+    <div class="section fifth">
+        <div class="fashion">
+          
+        </div>
+        <div class="contain">
+        <!-- 四个边框线 -->
+          <div class="top public"></div>
+          <div class="left public"></div>
+          <div class="right public"></div>
+          <div class="bottom public"></div>
+        <!-- 上面工具导航栏 -->
+          <div class="tool"></div>
+          <!-- 包裹内部搜索 -->
+          <div class="full"></div>
+          <!-- 下面工具栏 -->
+          <div class="foot"></div>
+          <div class="line public"></div>
+        </div>
+    </div>
+</div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.fullPage.min.js"></script>
+  <script>
+    $(function(){
+      $('#dowebok').fullpage({
+        loopBottom:true,
+        anchors:['firstPage', 'secondPage', 'thirdPage','fourthPage','fifthPage'],
+        menu: '#myMenu',
+        // paddingTop: '50px',
+        sectionsColor : ['#0da5d6', '#2AB561', '#DE8910', '#16BA9D', '#0DA5D6'],
+        afterLoad:function(anchorLink,index){
+          $('.menuList').removeClass('active');
+          $('.section').removeClass('current');
+          setTimeout(function(){
+            $('.section').eq(index - 1).addClass('current');
+            $('.menuList').eq(index - 1).addClass('active');
+          })
+          // 这里添加延迟后，侧边的锚点会闪烁一下
+        }
+      });
+    });
+    
+  </script>
+</body>
+</html>                           

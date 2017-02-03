@@ -1,0 +1,337 @@
+#myMenu {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  z-index: 1000;
+  transform: translateY(-50%);
+}
+#myMenu li{
+  margin-top: 10px;
+  height: 30px;
+  width: 30px;
+  background-color: #6262ED;
+  border-radius: 15px;
+  text-align: center;
+  line-height: 30px;
+}
+#myMenu li.active{
+  background-color: blue;
+}
+#myMenu li a {
+  height: 100%;
+  width: 100%;
+  display: block;
+  font-size: 20px;
+  color: white;
+}
+.section {
+  overflow: hidden;
+}
+/*第一页开始*/
+.first {
+  padding-top: 80px;
+}
+.first .logo {
+  width: 251px;
+  height: 186px;
+  margin: 0 auto;
+  background-image: url(../images/logo.png);
+}
+.first .text {
+  text-align: center;
+  line-height: 1;
+  margin: 85px 0 45px;
+}
+.first img {
+  margin: 0 24px;
+  opacity: 0;
+}
+.first .des {
+  height: 49px;
+  background: url(../images/info_1.png) center center no-repeat;
+}
+/*第一页动画*/
+.first.current img {
+  margin: 0;
+  opacity: 1;
+  transition: all 0.8s ease-out 0.2s;
+}   
+/*第二页开始*/
+.second .pics{
+  width: 420px;
+  margin: 80px 100px 30px 100px;
+  float: left;
+}
+.second .des {
+  background-image: url(../images/info_2.png);
+  width: 630px;
+  height: 309px;
+  float: left;
+  margin-top: 150px;
+}
+.second .pics img {
+  display: block;
+  float: left;
+}
+.second img:nth-child(1) {
+  transform: translate(35px, 78px) rotate(45deg);
+}
+
+.second img:nth-child(2) {
+  transform: translate(135px, 282px) rotate(15deg);
+}
+
+.second img:nth-child(3) {
+  transform: translate(187px, 62px) rotate(15deg);
+}
+
+.second img:nth-child(4) {
+  transform: translate(10px, 162px) rotate(30deg);
+}
+
+.second img:nth-child(5) {
+  transform: translate(465px, 522px) rotate(30deg);
+}
+
+.second img:nth-child(6) {
+  transform: translate(480px, 62px) rotate(90deg);
+}
+
+.second img:nth-child(7) {
+  transform: translate(180px, -305px) rotate(80deg);
+}
+
+.second img:nth-child(8) {
+  transform: translate(300px, -22px) rotate(70deg);
+}
+
+.second img:nth-child(9) {
+  transform: translate(280px, -322px) rotate(60deg);
+}
+/*第二屏动画*/
+.second.current img {
+  transform: translate(0 , 0) rotate(0deg);
+  transition: all 1s;
+}
+/*第三屏开始*/
+.third {
+  position: relative;
+}
+.third .fast {
+  width: 631px;
+  height: 278px;
+  background-image: url(../images/info_3.png);
+  margin: 180px 60px 0;
+  float: left;
+}
+.third .circle {
+  width: 453px;
+  height: 449px;
+  background-image: url(../images/circle.png);
+  float: left;
+  margin:110px 0 0 80px;
+}
+.third .rocket {
+  width: 203px;
+  height: 204px;
+  background-image: url(../images/rocket.png);
+  position: absolute;
+  right:218px;
+  top: 228px;
+  transform: translate(-800px, 500px);
+}
+/*第三屏动画*/
+.third.current .circle {
+  animation: circle 2s linear infinite;
+}
+.third.current .rocket{
+  transition: all 1s ease-in-out;
+  transform: translate(0,0);
+}
+@keyframes circle {
+  0%{
+
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/*第四屏开始*/
+.fourth {
+  position: relative;
+}
+.fourth .search {
+  position: relative;
+  width: 560px;
+}
+.fourth .search .inp {
+  width: 529px;
+  height: 66px;
+  background-image: url(../images/search.png);
+  margin: 170px 0 0 90px;
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.fourth .search .key {
+  width: 0px;
+  height: 22px;
+  background-image: url(../images/key.png);
+  position: absolute;
+  left: 120px;
+  top: 23px;
+}
+.fourth .search .wrap {
+  width: 529px;
+  height: 372px;
+  position: absolute;
+  left: 90px;
+  top: 54px;
+  overflow: hidden;
+}
+.fourth .search .result {
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/result.png);
+  transform: translateY(-100%);
+}
+.fourth .smart {
+  width: 612px;
+  height: 299px;
+  background-image: url(../images/info_4.png);
+  position: absolute;
+  top: 180px;
+  right: 70px;
+  
+}
+/*第四屏动画开始*/
+.fourth.current .search .inp {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 1s;
+}
+.fourth.current .search .key {
+  animation: step 1.5s steps(5) 1s forwards;
+}
+.fourth.current .search .result {
+  transform: translateY(0);
+  -webkit-transition: all 1s 3s;
+  -o-transition: all 1s 3s;
+  transition: all 1s 3s;
+}
+@keyframes step {
+  0%{
+    width: 0;
+  }100%{
+    width: 99px;
+  }
+}
+/*第五屏开始*/
+.fifth > div {
+  display: flex;
+  flex-direction: column;
+}
+.fifth .fashion {
+  width: 1077px;
+  height: 134px;
+  background-image: url(../images/info_5.png);
+  margin: 30px auto;
+}
+.fifth .contain {
+  width: 1004px;
+  margin: 0 auto;
+  position: relative;
+  flex : 1;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.fifth .contain .tool {
+  width: 1004px;
+  height: 79px;
+  background-image: url(../images/toolbar.png);
+  margin: 0 auto;
+  opacity: 0;
+}
+.fifth .contain .public {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.fifth .contain .left {
+  width: 1px;
+  height: 100%;
+  left: 0;
+  transform: translateY(-100%);
+  opacity: 0;
+}
+.fifth .contain .top {
+  width: 100%;
+  height: 1px;
+  top: 0;
+  transform: translateX(100%);
+  opacity: 0;
+}
+.fifth .contain .right {
+  width: 1px;
+  height: 100%;
+  right: 0;
+  transform: translateY(100%);
+  opacity: 0;
+}
+.fifth .contain .bottom {
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.fifth .contain .foot {
+  width: 394px;
+  height: 29px;
+  background-image: url(../images/extra.png);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.fifth .contain .line {
+  height: 1px;
+  width: 100%;
+  bottom: 30px;
+  opacity: 0;
+}
+.fifth .contain .full {
+  /*width: 920px;*/
+  width: 0;
+  height: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  position: absolute;
+  left: 70px;
+  top: 31px;
+  border-radius: 3px;
+}
+/*第五屏动画*/
+.fifth.current .public {
+  opacity: 1;
+  transition: all 1s linear;
+}
+.fifth.current .left {
+  transform: translate(0);
+  transition: all 1s linear;
+}
+.fifth.current .top {
+  transform: translate(0);
+  transition: all 1s 0.5s linear;
+}
+.fifth.current .right {
+  transform: translate(0);
+  transition: all 1s 0.5s linear;
+}
+.fifth.current .bottom {
+  transform: translate(0);
+  transition: all 1s 0.5s linear;
+}
+.fifth.current .full {
+  width: 920px;
+  transition: all 1.5s linear;
+}
+.fifth.current .tool {
+  opacity: 1;
+  transition: all 2s linear;
+}
